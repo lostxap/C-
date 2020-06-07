@@ -1,0 +1,108 @@
+1.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int n;
+   int P;
+   int k;
+   int i;
+   i = 0;
+   P = 1;
+   0 <= k <= 9;
+
+   cin >> n;
+   cin >> k;
+
+   while ( n != 0 )
+   {
+       if ( n % 10 != k )
+       {
+           P = P * ( n % 10 );
+       }
+       n = n / 10;
+   }
+   if ( P != 1 )
+   {
+       cout << P;
+   }
+   if ( P == 1 )
+   {
+       cout << i;
+   }
+}
+
+
+
+
+2.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,x,y;
+    x=0;
+    y=0;
+    cin>>a;
+    while ( a != 0 ){
+        if ( a % 2 == 0){
+            x++;
+        }
+        if ( a % 2 == 1) {
+            y++;
+        }
+        a = a/2;
+    }
+    cout<<x<<" "<<y;
+
+}
+
+
+
+3.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int nrd = -1;
+  int a;
+  int b;
+  int min = -1;
+  int max = -1;
+  cin>>a>>b;
+  for (int i = a; i<=b; i++) {
+    int c = 0;
+    for (int j = 2; j<=b; j++) {
+      if (j > i) { break;}
+      if (i % j == 0) {
+        c++;
+      }
+      j++;
+    }
+    if (c > nrd) { nrd = c; }
+  }
+  cout<<nrd<<" ";
+  for (int i = a; i<=b; i++) {
+    int c = 0;
+    for (int j = 2; j<=b; j++) {
+      if (j > i) { break; }
+      if (i % j == 0) {
+        c++;
+      }
+      j++;
+    }
+    if (c == nrd) {
+      if (i < min || min < 0) { min = i; }
+      if (i > max) { max = i; }
+    }
+  }
+  cout<<min<<" "<<max;
+}
+
